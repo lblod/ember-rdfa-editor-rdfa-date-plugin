@@ -1,0 +1,37 @@
+import Component from '@glimmer/component';
+import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
+
+export default class RdfaDatePluginCardComponent extends Component {
+  @tracked showCard = false;
+  @tracked dateValue;
+
+  constructor() {
+    super(...arguments);
+    this.args.controller.onEvent('contentChanged', this.modelWrittenHandler);
+  }
+
+  @action
+  modifyDate() {
+    this.args.controller.executeCommand('modify-date', this.args.controller, this.dateElement, this.dateValue);
+  }
+
+  @action
+  changeDate(date) {
+    this.dateValue = date;
+  }
+
+  @action
+  modelWrittenHandler() {
+    const selectionParent =  this.args.controller.selection.lastRange.start.parent;
+    const datatype = selectionParent.attributeMap.get('datatype');
+    if(datatype === 'xsd:dateTime') {
+      this.showCard = true;
+      this.dateElement = selectionParent;
+      this.dateValue = new Date(selectionParent.attributeMap.get('content'));
+    } else {
+      this.showCard = false;
+      this.dateElement = undefined;
+    }
+  }
+}

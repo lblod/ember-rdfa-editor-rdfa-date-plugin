@@ -1,0 +1,13 @@
+{{#if this.showCard}}
+  <AuCard @flex={{true}} @divided={{true}} @expandable={{true}} @shadow={{true}} @size="small" as |c|>
+    <c.header>
+      <AuHeading @level="3" @skin="6">
+        Date
+      </AuHeading>
+    </c.header>
+    <c.content>
+      <DateTimePicker @onChange={{fn this.changeDate}} @value={{this.dateValue}} />
+      <AuButton {{on 'click' this.modifyDate}}>Insert Date</AuButton>
+    </c.content>
+  </AuCard>
+{{/if}}
