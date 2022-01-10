@@ -13,7 +13,7 @@ export default class RdfaDatePluginCardComponent extends Component {
 
   @action
   modifyDate() {
-    this.args.controller.executeCommand('modify-date', this.args.controller, this.dateElement, this.dateValue);
+    this.args.controller.executeCommand('modify-date', this.args.controller, this.dateElement, this.dateValue, this.onlyDate);
   }
 
   @action
@@ -33,6 +33,7 @@ export default class RdfaDatePluginCardComponent extends Component {
     } else if(datatype === 'xsd:date') {
       this.showCard = true;
       this.dateElement = selectionParent;
+      console.log(selectionParent.attributeMap.get('content'))
       this.dateValue = selectionParent.attributeMap.get('content') ? new Date(selectionParent.attributeMap.get('content')) : new Date();
       this.onlyDate = true;
     } else {
