@@ -8,12 +8,14 @@
       @localization={{this.datePickerLocalization}}
     />
   </div>
-  <div class="au-o-grid__item au-u-1-5 au-u-3-6@small">
-      <AuLabel for={{id}}>Hours</AuLabel>
-      <Input class="au-c-input au-c-input--block" type='number' @input={{fn this.onChangeTime 'hours'}} @value={{this.hours}} max={{24}} id="rdfa-date-hours-picker" />
-  </div>
-  <div class="au-o-grid__item au-u-1-5 au-u-3-6@small">
-    <AuLabel for={{id}}>Minutes</AuLabel>
-    <Input class="au-c-input au-c-input--block" type='number' @input={{fn this.onChangeTime 'minutes'}} @value={{this.minutes}} max={{60}} id="rdfa-date-minutes-picker" />
-  </div>
+  {{#unless @onlyDate}}
+    <div class="au-o-grid__item au-u-1-5 au-u-3-6@small">
+        <AuLabel for={{id}}>Hours</AuLabel>
+        <Input class="au-c-input au-c-input--block" type='number' @input={{fn this.onChangeTime 'hours'}} @value={{this.hours}} max={{24}} id="rdfa-date-hours-picker" />
+    </div>
+    <div class="au-o-grid__item au-u-1-5 au-u-3-6@small">
+      <AuLabel for={{id}}>Minutes</AuLabel>
+      <Input class="au-c-input au-c-input--block" type='number' @input={{fn this.onChangeTime 'minutes'}} @value={{this.minutes}} max={{60}} id="rdfa-date-minutes-picker" />
+    </div>
+  {{/unless}}
 </div>

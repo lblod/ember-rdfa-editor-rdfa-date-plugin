@@ -123,8 +123,8 @@ export default class ApplicationController extends Controller {
 
   @action
   rdfaEditorInit(controller) {
-    const presetContent = `<span content="2022-01-04T14:10:23.939Z" datatype="xsd:dateTime" property="prov:startedAtTime" class="is-required">
-    04/01/2022 15:10
+    const presetContent = `<span datatype="xsd:date" property="prov:startedAtTime" class="is-required">
+    date
   </span>`;
     this._editorController = controller;
     this.setHtmlContent(presetContent);

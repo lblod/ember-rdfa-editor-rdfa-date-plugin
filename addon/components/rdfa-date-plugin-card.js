@@ -28,7 +28,13 @@ export default class RdfaDatePluginCardComponent extends Component {
     if(datatype === 'xsd:dateTime') {
       this.showCard = true;
       this.dateElement = selectionParent;
-      this.dateValue = new Date(selectionParent.attributeMap.get('content'));
+      this.dateValue = this.dateValue = selectionParent.attributeMap.get('content') ? new Date(selectionParent.attributeMap.get('content')) : new Date();
+      this.onlyDate = false;
+    } else if(datatype === 'xsd:date') {
+      this.showCard = true;
+      this.dateElement = selectionParent;
+      this.dateValue = selectionParent.attributeMap.get('content') ? new Date(selectionParent.attributeMap.get('content')) : new Date();
+      this.onlyDate = true;
     } else {
       this.showCard = false;
       this.dateElement = undefined;
