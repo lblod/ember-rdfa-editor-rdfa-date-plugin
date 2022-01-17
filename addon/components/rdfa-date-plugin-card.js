@@ -13,7 +13,13 @@ export default class RdfaDatePluginCardComponent extends Component {
 
   @action
   modifyDate() {
-    this.args.controller.executeCommand('modify-date', this.args.controller, this.dateElement, this.dateValue, this.onlyDate);
+    this.args.controller.executeCommand(
+      'modify-date',
+      this.args.controller,
+      this.dateElement,
+      this.dateValue,
+      this.onlyDate
+    );
   }
 
   @action
@@ -23,18 +29,24 @@ export default class RdfaDatePluginCardComponent extends Component {
 
   @action
   modelWrittenHandler() {
-    const selectionParent =  this.args.controller.selection.lastRange.start.parent;
+    const selectionParent =
+      this.args.controller.selection.lastRange.start.parent;
     const datatype = selectionParent.attributeMap.get('datatype');
-    if(datatype === 'xsd:dateTime') {
+    if (datatype === 'xsd:dateTime') {
       this.showCard = true;
       this.dateElement = selectionParent;
-      this.dateValue = this.dateValue = selectionParent.attributeMap.get('content') ? new Date(selectionParent.attributeMap.get('content')) : new Date();
+      this.dateValue = this.dateValue = selectionParent.attributeMap.get(
+        'content'
+      )
+        ? new Date(selectionParent.attributeMap.get('content'))
+        : new Date();
       this.onlyDate = false;
-    } else if(datatype === 'xsd:date') {
+    } else if (datatype === 'xsd:date') {
       this.showCard = true;
       this.dateElement = selectionParent;
-      console.log(selectionParent.attributeMap.get('content'))
-      this.dateValue = selectionParent.attributeMap.get('content') ? new Date(selectionParent.attributeMap.get('content')) : new Date();
+      this.dateValue = selectionParent.attributeMap.get('content')
+        ? new Date(selectionParent.attributeMap.get('content'))
+        : new Date();
       this.onlyDate = true;
     } else {
       this.showCard = false;

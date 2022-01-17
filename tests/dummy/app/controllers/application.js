@@ -123,8 +123,9 @@ export default class ApplicationController extends Controller {
 
   @action
   rdfaEditorInit(controller) {
-    const presetContent = `<span datatype="xsd:date" property="prov:startedAtTime" class="is-required">
-    date
+    const presetContent = `<span resource="http://data.lblod.info/mappings/61DD4FF54402CC0009000002" typeof="ext:Mapping" data-editor-position-level="2" data-editor-rdfa-position-level="2">
+    <span property="dct:type" content="date"></span>
+    <span property="ext:content" datatype="xsd:date" data-editor-position-level="1" data-editor-rdfa-position-level="1">\${date}</span>
   </span>`;
     this._editorController = controller;
     this.setHtmlContent(presetContent);

@@ -43,7 +43,7 @@ export default class RdfaDatePlugin {
 
   modelWrittenHandler(event) {
     if (event.owner !== this.name) {
-      console.log('written');
+      //TODO implement automatically date recognition and insertion
     }
   }
 }
