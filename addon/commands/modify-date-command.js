@@ -11,7 +11,7 @@ export default class ModifyDateCommand {
 
   execute(controller, element, dateValue, onlyDate) {
     this.model.change((mutator) => {
-      const range = controller.ModelRange.fromInElement(
+      const range = controller.rangeFactory.fromInElement(
         element,
         0,
         element.getMaxOffset()
