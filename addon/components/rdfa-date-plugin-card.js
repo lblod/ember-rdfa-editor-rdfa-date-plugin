@@ -8,7 +8,7 @@ export default class RdfaDatePluginCardComponent extends Component {
 
   constructor() {
     super(...arguments);
-    this.args.controller.onEvent('contentChanged', this.modelWrittenHandler);
+    this.args.controller.onEvent('selectionChanged', this.modelWrittenHandler);
   }
 
   @action
