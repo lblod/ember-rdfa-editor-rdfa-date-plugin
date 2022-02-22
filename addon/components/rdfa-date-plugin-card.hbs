@@ -6,7 +6,7 @@
       </AuHeading>
     </c.header>
     <c.content>
-      <DateTimePicker @onChange={{fn this.changeDate}} @value={{this.dateValue}} @onlyDate={{this.onlyDate}} />
+      <DateTimePicker @onChange={{this.changeDate}} @value={{this.dateValue}} @onlyDate={{this.onlyDate}} />
       <AuButton {{on 'click' this.modifyDate}}>Insert Date</AuButton>
     </c.content>
   </AuCard>
