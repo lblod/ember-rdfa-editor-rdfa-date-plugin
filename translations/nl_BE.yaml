@@ -1,0 +1,14 @@
+date-plugin:
+
+  insert:
+    date: "Datum invoegen"
+    datetime: "Datum en tijd invoegen"
+
+  card:
+    title: "Datum"
+    insert-date: "Datum invoegen"
+    insert-datetime: "Datum en tijd invoegen"
+    label: "Selecteer datum"
+    hours: "uur"
+    minutes: "minuten"
+    now: "Nu"

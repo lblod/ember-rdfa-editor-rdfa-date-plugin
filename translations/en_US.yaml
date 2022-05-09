@@ -1,0 +1,14 @@
+date-plugin:
+
+  insert:
+    date: "Insert date"
+    datetime: "Insert date and time"
+
+  card:
+    title: "Date"
+    insert-date: "Insert date"
+    insert-datetime: "Insert date and time"
+    label: "Select date"
+    hours: "hours"
+    minutes: "minutes"
+    now: "Now"
