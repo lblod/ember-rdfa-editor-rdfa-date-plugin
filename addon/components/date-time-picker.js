@@ -50,7 +50,19 @@ export default class DateTimePicker extends Component {
   }
 
   @action
-  onChangeTime(type, event) {
+  onChangeTime(timeObject) {
+    console.log("Changing time", ...arguments);
+    if (!this.date) this.date = new Date();
+    console.log("Setting hours:", timeObject.hours);
+    this.hours = timeObject.hours;
+    this.minutes = timeObject.minutes;
+    this.date.setHours(timeObject.hours);
+    this.date.setMinutes(timeObject.minutes);
+    this.args.onChange(this.date);
+  }
+
+  @action
+  onChangeTime2(type, event) {
     const value = event.target.value;
     if (!this.date) {
       this.date = new Date();
