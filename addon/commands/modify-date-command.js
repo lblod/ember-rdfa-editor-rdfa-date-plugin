@@ -16,7 +16,7 @@ export default class ModifyDateCommand {
         0,
         element.getMaxOffset()
       );
-      mutator.insertText(range, this.formatDate(dateValue, onlyDate));
+      mutator.insertText(range, this.formatDate(dateValue, onlyDate), range.getMarks());
       element.attributeMap.set('content', dateValue.toISOString());
     });
   }
