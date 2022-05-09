@@ -1,13 +1,17 @@
 {{#if this.showCard}}
   <AuCard @flex={{true}} @divided={{true}} @expandable={{true}} @shadow={{true}} @size="small" as |c|>
     <c.header>
-      <AuHeading @level="3" @skin="6">
-        Date
-      </AuHeading>
+      <AuHeading @level="3" @skin="6">{{t "date-plugin.card.title"}}</AuHeading>
     </c.header>
     <c.content>
-      <DateTimePicker @onChange={{this.changeDate}} @value={{this.dateValue}} @onlyDate={{this.onlyDate}} />
-      <AuButton {{on 'click' this.modifyDate}}>Insert Date</AuButton>
+      <div class="au-o-flow au-o-flow--small">
+        <DateTimePicker @onChange={{this.changeDate}} @value={{this.dateValue}} @onlyDate={{this.onlyDate}} />
+        <AuFormRow>
+          <AuButton {{on 'click' this.modifyDate}}>
+            {{if this.onlyDate (t "date-plugin.card.insert-date") (t "date-plugin.card.insert-datetime")}}
+          </AuButton>
+        </AuFormRow>
+      </div>
     </c.content>
   </AuCard>
 {{/if}}
