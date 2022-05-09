@@ -6,6 +6,7 @@ export default class RdfaDatePluginCardComponent extends Component {
   @tracked showCard = false;
   @tracked dateValue;
   @tracked dateElement;
+  @tracked onlyDate;
 
   constructor() {
     super(...arguments);
