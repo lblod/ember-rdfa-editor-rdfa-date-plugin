@@ -6,6 +6,7 @@ export default class RdfaDatePluginCardComponent extends Component {
   @tracked showCard = false;
   @tracked dateValue;
   @tracked dateElement;
+  @tracked dateInDocument;
   @tracked onlyDate;
 
   constructor() {
@@ -27,6 +28,7 @@ export default class RdfaDatePluginCardComponent extends Component {
   @action
   changeDate(date) {
     this.dateValue = date;
+    if (this.dateInDocument) this.modifyDate();
   }
 
   @action
@@ -37,18 +39,16 @@ export default class RdfaDatePluginCardComponent extends Component {
     if (datatype === 'xsd:dateTime') {
       this.showCard = true;
       this.dateElement = selectionParent;
-      this.dateValue = this.dateValue = selectionParent.attributeMap.get(
-        'content'
-      )
-        ? new Date(selectionParent.attributeMap.get('content'))
-        : new Date();
+      const dateContent = selectionParent.attributeMap.get('content');
+      this.dateValue = dateContent ? new Date(dateContent) : new Date();
+      this.dateInDocument = !!dateContent;
       this.onlyDate = false;
     } else if (datatype === 'xsd:date') {
       this.showCard = true;
       this.dateElement = selectionParent;
-      this.dateValue = selectionParent.attributeMap.get('content')
-        ? new Date(selectionParent.attributeMap.get('content'))
-        : new Date();
+      const dateContent = selectionParent.attributeMap.get('content');
+      this.dateValue = dateContent ? new Date(dateContent) : new Date();
+      this.dateInDocument = !!dateContent;
       this.onlyDate = true;
     } else {
       this.showCard = false;
