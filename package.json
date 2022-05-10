@@ -84,6 +84,7 @@
     "qunit": "^2.17.2",
     "qunit-dom": "^1.6.0",
     "sass": "^1.49.7",
+    "tracked-toolbox": "^1.2.3",
     "webpack": "^5.69.0",
     "xml-formatter": "^2.6.1"
   },
