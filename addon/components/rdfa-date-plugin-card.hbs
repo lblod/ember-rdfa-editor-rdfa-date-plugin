@@ -5,12 +5,17 @@
     </c.header>
     <c.content>
       <div class="au-o-flow au-o-flow--small">
-        <DateTimePicker @onChange={{this.changeDate}} @value={{this.dateValue}} @onlyDate={{this.onlyDate}} />
-        <AuFormRow>
-          <AuButton {{on 'click' this.modifyDate}}>
-            {{if this.onlyDate (t "date-plugin.card.insert-date") (t "date-plugin.card.insert-datetime")}}
-          </AuButton>
-        </AuFormRow>
+        <DateTimePicker
+          @onChange={{this.changeDate}}
+          @value={{this.dateValue}}
+          @onlyDate={{this.onlyDate}}/>
+        {{#unless this.dateInDocument}}
+          <AuFormRow class="au-u-margin-top">
+            <AuButton {{on 'click' this.modifyDate}}>
+              {{if this.onlyDate (t "date-plugin.card.insert-date") (t "date-plugin.card.insert-datetime")}}
+            </AuButton>
+          </AuFormRow>
+        {{/unless}}
       </div>
     </c.content>
   </AuCard>
