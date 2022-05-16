@@ -5,6 +5,7 @@ import { action } from '@ember/object';
 export default class RdfaDatePluginCardComponent extends Component {
   @tracked showCard = false;
   @tracked dateValue;
+  @tracked dateElement;
 
   constructor() {
     super(...arguments);
