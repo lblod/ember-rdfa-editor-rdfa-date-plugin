@@ -1,4 +1,12 @@
 
+## 0.1.1 (2022-05-16)
+
+#### :bug: Bug Fix
+* [#5](https://github.com/lblod/ember-rdfa-editor-rdfa-date-plugin/pull/5) Fix date insertion ([@benjay10](https://github.com/benjay10))
+
+#### Committers: 1
+- Ben ([@benjay10](https://github.com/benjay10))
+
 ## 0.1.0 (2022-02-26)
 
 #### :rocket: Enhancement
