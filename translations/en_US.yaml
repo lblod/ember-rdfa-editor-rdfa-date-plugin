@@ -9,6 +9,6 @@ date-plugin:
     insert-date: "Insert date"
     insert-datetime: "Insert date and time"
     label: "Select date"
-    hours: "hours"
-    minutes: "minutes"
+    hours: "Hours"
+    minutes: "Minutes"
     now: "Now"
