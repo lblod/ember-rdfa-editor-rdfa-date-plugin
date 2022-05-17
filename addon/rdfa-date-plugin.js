@@ -36,6 +36,11 @@ export default class RdfaDatePlugin {
       identifier: 'rdfa-date-plugin/card',
       desiredLocation: 'sidebar',
     });
+    controller.registerWidget({
+      componentName: 'rdfa-date-plugin-insert',
+      identifier: 'rdfa-date-plugin/insert',
+      desiredLocation: 'insertSidebar',
+    });
     controller.registerCommand(
       new ModifyDateCommand(controller._rawEditor._model)
     );

@@ -1,20 +1,18 @@
 import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
+import { localCopy } from 'tracked-toolbox';
 
 export default class DateTimePicker extends Component {
   @service intl;
-  date;
-  hours;
-  minutes;
+  @localCopy('args.value') date;
 
-  constructor() {
-    super(...arguments);
-    if (this.args.value) {
-      this.date = new Date(this.args.value);
-      this.hours = this.date.getHours();
-      this.minutes = this.date.getMinutes();
-    }
+  get hours() {
+    return this.date.getHours();
+  }
+
+  get minutes() {
+    return this.date.getMinutes();
   }
 
   get datePickerLocalization() {
@@ -49,18 +47,10 @@ export default class DateTimePicker extends Component {
   }
 
   @action
-  onChangeTime(type, event) {
-    const value = event.target.value;
-    if (!this.date) {
-      this.date = new Date();
-    }
-    if (type === 'hours') {
-      if (value < 0 || value > 24) return;
-      this.date.setHours(value);
-    } else {
-      if (value < 0 || value > 60) return;
-      this.date.setMinutes(value);
-    }
+  onChangeTime(timeObject) {
+    if (!this.date) this.date = new Date();
+    this.date.setHours(timeObject.hours);
+    this.date.setMinutes(timeObject.minutes);
     this.args.onChange(this.date);
   }
 }

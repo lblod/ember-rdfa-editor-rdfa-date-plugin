@@ -1,21 +1,21 @@
-<div class="au-o-grid au-o-grid--tiny">
-  <div class="au-o-grid__item au-u-5-5">
-    <AuLabel for="rdfa-date-date-picker">Date</AuLabel>
+  <AuFormRow>
     <AuDatePicker
-      @id="rdfa-date-date-picker"
       @onChange={{this.onChangeDate}}
       @value={{this.date}}
-      @localization={{this.datePickerLocalization}}
-    />
-  </div>
+      @label={{t "date-plugin.card.label"}}
+      @localization={{this.datePickerLocalization}}/>
+  </AuFormRow>
   {{#unless @onlyDate}}
-    <div class="au-o-grid__item au-u-1-5 au-u-3-6@small">
-        <AuLabel for="au-c-input au-c-input--block">Hours</AuLabel>
-        <Input class="au-c-input au-c-input--block" @type='number' {{on 'input' (fn this.onChangeTime 'hours')}} @value={{this.hours}} max={{24}} id="rdfa-date-hours-picker" />
-    </div>
-    <div class="au-o-grid__item au-u-1-5 au-u-3-6@small">
-      <AuLabel for="au-c-input au-c-input--block">Minutes</AuLabel>
-	  <Input class="au-c-input au-c-input--block" @type='number' {{on 'input' (fn this.onChangeTime 'minutes')}} @value={{this.minutes}} max={{60}} id="rdfa-date-minutes-picker" />
-    </div>
+    <AuFormRow>
+      <AuTimePicker
+        @hoursLabel={{t "date-plugin.card.hours"}}
+        @minutesLabel={{t "date-plugin.card.minutes"}}
+        @nowLabel={{t "date-plugin.card.now"}}
+        @hours={{this.hours}}
+        @minutes={{this.minutes}}
+        @showSeconds={{false}}
+        @showNow={{true}}
+        @onChange={{this.onChangeTime}}
+        />
+    </AuFormRow>
   {{/unless}}
-</div>
