@@ -34,13 +34,13 @@
   },
   "peerDependencies": {
     "@appuniversum/appuniversum": "^1.0.0",
-    "@appuniversum/ember-appuniversum": "^1.0.14",
+    "@appuniversum/ember-appuniversum": "^1.0.15",
     "@lblod/ember-rdfa-editor": ">=0.50.0",
     "ember-concurrency": "^2.0.0"
   },
   "devDependencies": {
     "@appuniversum/appuniversum": "^1.0.0",
-    "@appuniversum/ember-appuniversum": "^1.0.14",
+    "@appuniversum/ember-appuniversum": "^1.0.15",
     "@codemirror/basic-setup": "^0.19.0",
     "@codemirror/lang-html": "^0.19.4",
     "@codemirror/lang-xml": "^0.19.2",
