@@ -3,7 +3,7 @@ import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 import { localCopy } from 'tracked-toolbox';
 
-export default class DateTimePicker extends Component {
+export default class RdfaDateTimePicker extends Component {
   @service intl;
   @localCopy('args.value') date;
 
