@@ -1,6 +1,14 @@
 
 This release features a redesign of the date plugin using the new insert menu and using a new time picker.
 
+## 0.2.1 (2022-07-08)
+
+#### :bug: Bug Fix
+* [#7](https://github.com/lblod/ember-rdfa-editor-rdfa-date-plugin/pull/7) Rename datepicker component ([@Dietr](https://github.com/Dietr))
+
+#### Committers: 1
+- Dieter Peirs ([@Dietr](https://github.com/Dietr))
+
 ## 0.2.0 (2022-05-23)
 
 #### :rocket: Enhancement
