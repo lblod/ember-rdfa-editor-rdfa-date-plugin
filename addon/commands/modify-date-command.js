@@ -1,14 +1,14 @@
 export default class ModifyDateCommand {
   name = 'modify-date';
 
-  arguments = ['controller', 'element', 'dateValue', 'onlyDate'];
+  arguments = ['element', 'dateValue', 'onlyDate'];
 
   canExecute() {
     return true;
   }
 
-  execute({ transaction }, { controller, element, dateValue, onlyDate }) {
-    const range = controller.rangeFactory.fromInElement(
+  execute({ transaction }, { element, dateValue, onlyDate }) {
+    const range = transaction.rangeFactory.fromInElement(
       element,
       0,
       element.getMaxOffset()

@@ -20,7 +20,6 @@ export default class RdfaDatePluginCardComponent extends Component {
   modifyDate() {
     this.args.controller.executeCommand(
       'modify-date',
-      this.args.controller,
       this.dateElement,
       this.dateValue,
       this.onlyDate
