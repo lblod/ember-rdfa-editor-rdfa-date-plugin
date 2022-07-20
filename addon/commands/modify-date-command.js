@@ -1,28 +1,24 @@
 export default class ModifyDateCommand {
   name = 'modify-date';
 
-  constructor(model) {
-    this.model = model;
-  }
+  arguments = ['controller', 'element', 'dateValue', 'onlyDate'];
 
   canExecute() {
     return true;
   }
 
-  execute(controller, element, dateValue, onlyDate) {
-    this.model.change((mutator) => {
-      const range = controller.rangeFactory.fromInElement(
-        element,
-        0,
-        element.getMaxOffset()
-      );
-      mutator.insertText(
-        range,
-        this.formatDate(dateValue, onlyDate),
-        range.getMarks()
-      );
-      element.attributeMap.set('content', dateValue.toISOString());
+  execute({ transaction }, { controller, element, dateValue, onlyDate }) {
+    const range = controller.rangeFactory.fromInElement(
+      element,
+      0,
+      element.getMaxOffset()
+    );
+    transaction.insertText({
+      range: range,
+      text: this.formatDate(dateValue, onlyDate),
+      marks: range.getMarks(),
     });
+    element.attributeMap.set('content', dateValue.toISOString());
   }
 
   formatDate(date, onlyDate) {

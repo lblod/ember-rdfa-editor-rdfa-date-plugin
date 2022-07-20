@@ -11,7 +11,14 @@ export default class RdfaDatePluginCardComponent extends Component {
 
   constructor() {
     super(...arguments);
-    this.args.controller.onEvent('selectionChanged', this.modelWrittenHandler);
+    this.args.controller.onTransactionUpdate(this.handleTransactionUpdate);
+  }
+
+  @action
+  handleTransactionUpdate(transaction, operation) {
+    if (operation.type === 'selection-operation') {
+      this.modelWrittenHandler(transaction.currentSelection);
+    }
   }
 
   @action
@@ -32,9 +39,8 @@ export default class RdfaDatePluginCardComponent extends Component {
   }
 
   @action
-  modelWrittenHandler() {
-    const selectionParent =
-      this.args.controller.selection.lastRange.start.parent;
+  modelWrittenHandler(selection) {
+    const selectionParent = selection.lastRange.start.parent;
     const datatype = selectionParent.attributeMap.get('datatype');
     if (datatype === 'xsd:dateTime') {
       this.showCard = true;
