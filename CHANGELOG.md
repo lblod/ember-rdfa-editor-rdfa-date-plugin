@@ -1,6 +1,16 @@
 
 This release features a redesign of the date plugin using the new insert menu and using a new time picker.
 
+
+## 0.3.0 (2022-09-09)
+
+#### :boom: Breaking Change
+* [#8](https://github.com/lblod/ember-rdfa-editor-rdfa-date-plugin/pull/8) bump editor to v0.63.1 ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
 ## 0.2.1 (2022-07-08)
 
 #### :bug: Bug Fix
