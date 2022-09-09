@@ -33,22 +33,17 @@
     "uuid": "^8.3.2"
   },
   "peerDependencies": {
-    "@appuniversum/appuniversum": "^1.0.0",
-    "@appuniversum/ember-appuniversum": "^1.0.15",
-    "@lblod/ember-rdfa-editor": ">=0.50.0",
+    "@appuniversum/ember-appuniversum": "^1.5.0",
+    "@lblod/ember-rdfa-editor": ">=0.63.1",
     "ember-concurrency": "^2.0.0"
   },
   "devDependencies": {
-    "@appuniversum/appuniversum": "^1.0.0",
-    "@appuniversum/ember-appuniversum": "^1.0.15",
-    "@codemirror/basic-setup": "^0.19.0",
-    "@codemirror/lang-html": "^0.19.4",
-    "@codemirror/lang-xml": "^0.19.2",
+    "@appuniversum/ember-appuniversum": "^1.5.0",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.6.0",
     "@glimmer/component": "^1.0.4",
     "@glimmer/tracking": "^1.0.4",
-    "@lblod/ember-rdfa-editor": "^0.57.0",
+    "@lblod/ember-rdfa-editor": "^0.63.1",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^2.4.0",
@@ -86,11 +81,10 @@
     "qunit-dom": "^1.6.0",
     "sass": "^1.49.7",
     "tracked-toolbox": "^1.2.3",
-    "webpack": "^5.69.0",
-    "xml-formatter": "^2.6.1"
+    "webpack": "^5.69.0"
   },
   "engines": {
-    "node": "12.* || 14.* || >= 16"
+    "node": "14.* || >= 16"
   },
   "ember": {
     "edition": "octane"
