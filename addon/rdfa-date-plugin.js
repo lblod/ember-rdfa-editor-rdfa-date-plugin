@@ -30,7 +30,7 @@ export default class RdfaDatePlugin {
 
   initialize(controller) {
     this.controller = controller;
-    controller.onEvent('contentChanged', this.modelWrittenHandler.bind(this));
+    // controller.onEvent('contentChanged', this.modelWrittenHandler.bind(this));
     controller.registerWidget({
       componentName: 'rdfa-date-plugin-card',
       identifier: 'rdfa-date-plugin/card',
@@ -41,9 +41,9 @@ export default class RdfaDatePlugin {
       identifier: 'rdfa-date-plugin/insert',
       desiredLocation: 'insertSidebar',
     });
-    controller.registerCommand(
-      new ModifyDateCommand(controller._rawEditor._model)
-    );
+    controller.perform((tr) => {
+      tr.registerCommand('modifyDate', new ModifyDateCommand());
+    });
   }
 
   modelWrittenHandler(event) {

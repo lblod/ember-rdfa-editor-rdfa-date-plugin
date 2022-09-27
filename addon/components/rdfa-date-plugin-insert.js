@@ -4,21 +4,21 @@ import { action } from '@ember/object';
 export default class RdfaDatePluginInsertComponent extends Component {
   @action
   insertDate() {
-    const selection = this.args.controller.selection.lastRange;
-    this.args.controller.executeCommand(
-      'insert-html',
-      '<span datatype="xsd:date" property="ext:content">${date}</span>',
-      selection
-    );
+    this.args.controller.perform((tr) => {
+      tr.commands.insertHtml({
+        htmlString:
+          '<span datatype="xsd:date" property="ext:content">${date}</span>',
+      });
+    });
   }
 
   @action
   insertDateTime() {
-    const selection = this.args.controller.selection.lastRange;
-    this.args.controller.executeCommand(
-      'insert-html',
-      '<span datatype="xsd:dateTime" property="ext:content">${date and time}</span>',
-      selection
-    );
+    this.args.controller.perform((tr) => {
+      tr.commands.insertHtml({
+        htmlString:
+          '<span datatype="xsd:dateTime" property="ext:content">${date and time}</span>',
+      });
+    });
   }
 }
