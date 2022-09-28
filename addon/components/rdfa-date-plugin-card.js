@@ -36,8 +36,11 @@ export default class RdfaDatePluginCardComponent extends Component {
 
   @action
   selectionChangedHandler() {
-    const selectionParent =
-      this.args.controller.selection.lastRange.start.parent;
+    const selectedRange = this.args.controller.selection.lastRange;
+    if (!selectedRange) {
+      return;
+    }
+    const selectionParent = selectedRange.start.parent;
     const datatype = selectionParent.attributeMap.get('datatype');
     if (datatype === 'xsd:dateTime') {
       this.showCard = true;
