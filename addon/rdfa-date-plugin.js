@@ -1,4 +1,5 @@
 import ModifyDateCommand from './commands/modify-date-command';
+
 /**
  * Entry point for RdfaDate
  *
@@ -30,7 +31,6 @@ export default class RdfaDatePlugin {
 
   initialize(controller) {
     this.controller = controller;
-    controller.onEvent('contentChanged', this.modelWrittenHandler.bind(this));
     controller.registerWidget({
       componentName: 'rdfa-date-plugin-card',
       identifier: 'rdfa-date-plugin/card',
@@ -44,11 +44,5 @@ export default class RdfaDatePlugin {
     controller.registerCommand(
       new ModifyDateCommand(controller._rawEditor._model)
     );
-  }
-
-  modelWrittenHandler(event) {
-    if (event.owner !== this.name) {
-      //TODO implement automatically date recognition and insertion
-    }
   }
 }
