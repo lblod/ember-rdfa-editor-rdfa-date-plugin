@@ -2,6 +2,25 @@
 This release features a redesign of the date plugin using the new insert menu and using a new time picker.
 
 
+
+
+## 0.3.2 (2022-10-07)
+
+#### :house: Internal
+* [#11](https://github.com/lblod/ember-rdfa-editor-rdfa-date-plugin/pull/11) Add release-it packages and release script ([@elpoelma](https://github.com/elpoelma))
+
+#### Committers: 1
+- Elena Poelman ([@elpoelma](https://github.com/elpoelma))
+
+## 0.3.1 (2022-09-29)
+
+#### :bug: Bug Fix
+* [#10](https://github.com/lblod/ember-rdfa-editor-rdfa-date-plugin/pull/10) handle cases where selection has no range ([@abeforgit](https://github.com/abeforgit))
+
+#### Committers: 1
+- Arne Bertrand ([@abeforgit](https://github.com/abeforgit))
+
+
 ## 0.3.0 (2022-09-09)
 
 #### :boom: Breaking Change

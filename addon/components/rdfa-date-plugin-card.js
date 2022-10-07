@@ -16,6 +16,13 @@ export default class RdfaDatePluginCardComponent extends Component {
     );
   }
 
+  willDestroy() {
+    this.args.controller.removeTransactionDispatchListener(
+      this.onTransactionDispatch
+    );
+    super.willDestroy();
+  }
+
   @action
   modifyDate() {
     this.args.controller.perform((tr) => {
@@ -39,9 +46,11 @@ export default class RdfaDatePluginCardComponent extends Component {
     );
   }
 
-  @action
-  onTransactionDispatch(transaction) {
-    if (this.modifiesSelection(transaction.steps)) {
+  onTransactionDispatch = (transaction) => {
+    if (
+      this.modifiesSelection(transaction.steps) &&
+      transaction.currentSelection.lastRange
+    ) {
       const selectionParent =
         transaction.currentSelection.lastRange.start.parent;
       const datatype = selectionParent.attributeMap.get('datatype');
@@ -64,5 +73,5 @@ export default class RdfaDatePluginCardComponent extends Component {
         this.dateElement = undefined;
       }
     }
-  }
+  };
 }
