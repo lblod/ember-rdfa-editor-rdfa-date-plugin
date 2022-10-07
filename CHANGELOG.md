@@ -4,6 +4,11 @@ This release features a redesign of the date plugin using the new insert menu an
 
 
 
+## 1.0.0-alpha.1 (2022-10-07)
+
+Initial support for the new transactional edits (TEDI) editor API.
+
+
 ## 0.3.2 (2022-10-07)
 
 #### :house: Internal

@@ -1,6 +1,6 @@
 {
   "name": "@lblod/ember-rdfa-editor-rdfa-date-plugin",
-  "version": "0.3.2",
+  "version": "1.0.0-alpha.1",
   "description": "date plugin for ember-rdfa-editor",
   "keywords": [
     "ember-addon",
