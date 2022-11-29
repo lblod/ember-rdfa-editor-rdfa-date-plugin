@@ -2,23 +2,38 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 
 export default class RdfaDatePluginInsertComponent extends Component {
+  get controller() {
+    return this.args.controller;
+  }
   @action
   insertDate() {
-    const selection = this.args.controller.selection.lastRange;
-    this.args.controller.executeCommand(
-      'insert-html',
-      '<span datatype="xsd:date" property="ext:content">${date}</span>',
-      selection
-    );
+    this.controller.withTransaction((tr) => {
+      return tr.replaceSelectionWith(
+        this.controller.schema.node(
+          'inline_rdfa',
+          {
+            datatype: 'xsd:date',
+            property: 'ext:content',
+          },
+          [this.controller.schema.text('${date}')]
+        )
+      );
+    });
   }
 
   @action
   insertDateTime() {
-    const selection = this.args.controller.selection.lastRange;
-    this.args.controller.executeCommand(
-      'insert-html',
-      '<span datatype="xsd:dateTime" property="ext:content">${date and time}</span>',
-      selection
-    );
+    this.controller.withTransaction((tr) => {
+      return tr.replaceSelectionWith(
+        this.controller.schema.node(
+          'inline_rdfa',
+          {
+            datatype: 'xsd:dateTime',
+            property: 'ext:content',
+          },
+          [this.controller.schema.text('${date and time}')]
+        )
+      );
+    });
   }
 }

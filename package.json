@@ -28,9 +28,11 @@
     "release": "release-it"
   },
   "dependencies": {
+    "ember-auto-import": "^2.4.0",
     "ember-cli-babel": "^7.26.10",
     "ember-cli-htmlbars": "^5.7.2",
     "ember-mu-transform-helpers": "^2.0.0",
+    "ember-resources": "^5.6.0",
     "uuid": "^8.3.2"
   },
   "peerDependencies": {
@@ -48,7 +50,6 @@
     "@release-it-plugins/lerna-changelog": "^5.0.0",
     "babel-eslint": "^10.1.0",
     "broccoli-asset-rev": "^3.0.0",
-    "ember-auto-import": "^2.4.0",
     "ember-cli": "~3.28.5",
     "ember-cli-autoprefixer": "^2.0.0",
     "ember-cli-dependency-checker": "^3.2.0",
