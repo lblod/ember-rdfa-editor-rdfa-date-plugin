@@ -1,5 +1,5 @@
 # ember-rdfa-editor-rdfa-date-plugin
-
+:warning: This ember addon is no longer maintained. Please use [@lblod/ember-rdfa-editor-lblod-plugins](https://github.com/lblod/ember-rdfa-editor-lblod-plugins) instead.
 
 This plugin allows you interact with dates on the editor, it will find dates in the text, add the correct rdfa attributes and let you modify them in the plugin card
 
